@@ -2,16 +2,22 @@ Summary:	Software for managing Zen Nomad playlist
 Summary(pl):	Oprogramowanie do zarz±dzania list± plików Zen Creative
 Name:		gnomad2
 Version:	2.6.3
-Release:	2
-License:	BSD
+Release:	3
+License:	GPL v2
 Vendor:		PLD
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
 # Source0-md5:	a969cb089c63c72ab242d94fc0413e62
 Source1:	gnomad2.desktop
 Source2:	gnomad2.png
+Patch0:		%{name}-libnjb.patch
 URL:		http://gnomad2.sourceforge.net/
-BuildRequires:	libnjb
+BuildRequires:	glib2-devel
+BuildRequires:	gtk+2-devel
+BuildRequires:	libgnomeui-devel
+BuildRequires:	libid3tag-devel
+BuildRequires:	libnjb-devel
+BuildRequires:	pkgconfig
 Requires:	libnjb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +33,8 @@ odtwarzacza Nomad Creative. Zosta³ zaprojektowany na wzór popularnego klienta
 FTP.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
+%patch0 -p1
 
 %build
 %configure
@@ -36,12 +43,12 @@ FTP.
 %install
 rm -rf $RPM_BUILD_ROOT
 # create directories if necessary
-install -d $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/%{_pixmapsdir}
-install -d $RPM_BUILD_ROOT/gnomad2-logo.png $RPM_BUILD_ROOT/%{_pixmapsdir}/gnomad2.png
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,7 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
+%attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/gnomad2.desktop
 %{_pixmapsdir}/gnomad2.png
-
-%attr(755,root,root) %{_bindir}/*
