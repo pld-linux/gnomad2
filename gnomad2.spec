@@ -1,5 +1,5 @@
 Summary:	Software for managing Zen Nomad playlist
-Summary(pl):	Oprogramowanie do zarz±dzania list± odtwarzania Zen Creative
+Summary(pl):	Oprogramowanie do zarz±dzania list± plików Zen Creative
 Name:		gnomad2
 Version:	2.6.3
 Release:	1
@@ -15,7 +15,15 @@ Requires:	libnjb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-(2 b done)
+Gnomad 2 is a GUI built on top of GTK/GNOME 2, id3lib and libnjb that makes it
+possible to transfer tracks and files from/to a Creative Nomad Jukebox (all
+brands). It is designed much like an ordinary graphical FTP program.
+
+%description -pl
+Gnomad 2 jest Graficznym Interfejsem U¿ytkownika zbudowanym w oparciu o
+bibliotekê GTK, id3lib oraz libnjb.  Umo¿liwia transfer utworów z i do
+odtwarzacza Nomad Creative. Zosta³ zaprojektowany na wzór popularnego klienta
+FTP.
 
 %prep
 %setup -q -n %{name}-%{version}
