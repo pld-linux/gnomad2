@@ -12,25 +12,26 @@ Source1:	gnomad2.desktop
 Source2:	gnomad2.png
 Patch0:		%{name}-libnjb.patch
 URL:		http://gnomad2.sourceforge.net/
-BuildRequires:	glib2-devel
-BuildRequires:	gtk+2-devel
-BuildRequires:	libgnomeui-devel
-BuildRequires:	libid3tag-devel
+BuildRequires:	glib2-devel >= 2.0
+BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	libgnomeui-devel >= 2.0
+BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	libnjb-devel
 BuildRequires:	pkgconfig
 Requires:	libnjb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Gnomad 2 is a GUI built on top of GTK/GNOME 2, id3lib and libnjb that makes it
-possible to transfer tracks and files from/to a Creative Nomad Jukebox (all
-brands). It is designed much like an ordinary graphical FTP program.
+Gnomad 2 is a GUI built on top of GTK+/GNOME 2, libid3tag and libnjb
+that makes it possible to transfer tracks and files from/to a Creative
+Nomad Jukebox (all brands). It is designed much like an ordinary
+graphical FTP program.
 
 %description -l pl
-Gnomad 2 jest Graficznym Interfejsem U¿ytkownika zbudowanym w oparciu o
-bibliotekê GTK, id3lib oraz libnjb.  Umo¿liwia transfer utworów z i do
-odtwarzacza Nomad Creative. Zosta³ zaprojektowany na wzór popularnego klienta
-FTP.
+Gnomad 2 jest graficznym interfejsem u¿ytkownika zbudowanym w oparciu
+o biblioteki GTK+/GNOME, libid3tag oraz libnjb. Umo¿liwia przesy³anie
+utworów z i do odtwarzacza Nomad Creative. Zosta³ zaprojektowany na
+wzór zwyk³ego graficznego klienta FTP.
 
 %prep
 %setup -q
@@ -42,8 +43,7 @@ FTP.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
-install -d $RPM_BUILD_ROOT/%{_pixmapsdir}
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
