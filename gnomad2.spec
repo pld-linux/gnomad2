@@ -15,7 +15,7 @@ BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gtk+2-devel >= 2.0
 BuildRequires:	libgnomeui-devel >= 2.0
 BuildRequires:	libid3tag-devel >= 0.15
-BuildRequires:	libnjb-devel
+BuildRequires:	libnjb-devel >= 2.2.4
 BuildRequires:	pkgconfig
 Requires:	libnjb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
