@@ -1,12 +1,12 @@
-diff -urN gnomad2-2.6.3/src/jukebox.h gnomad2-2.6.3.new/src/jukebox.h
---- gnomad2-2.6.3/src/jukebox.h	2005-01-17 14:25:53.000000000 +0100
-+++ gnomad2-2.6.3.new/src/jukebox.h	2005-03-14 16:08:09.445709944 +0100
-@@ -22,7 +22,7 @@
- 
- /* The jukebox library is included into all files
-  * using this file */
+diff -ur gnomad2-2.8.3/src/jukebox.h gnomad2-2.8.3.new/src/jukebox.h
+--- gnomad2-2.8.3/src/jukebox.h	2006-03-21 14:58:02.000000000 +0100
++++ gnomad2-2.8.3.new/src/jukebox.h	2006-05-06 10:09:42.421911736 +0200
+@@ -24,7 +24,7 @@
+  * The jukebox library is included into all files
+  * using this file
+  */
 -#include <libnjb.h>
 +#include <libnjb/libnjb.h>
- #include "metadata.h"
  
- typedef struct 
+ /*
+  * libmtp is included conditionally.
