@@ -9,8 +9,7 @@ Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
 # Source0-md5:	cc2d29265e84c2460075ff2b78c2f119
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-Patch0:		%{name}-libnjb.patch
-Patch1:		%{name}-mtp-0.0.2-to-0.0.4.patch
+Patch0:		%{name}-mtp-0.0.2-to-0.0.4.patch
 URL:		http://gnomad2.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gtk+2-devel >= 2.0
@@ -37,11 +36,12 @@ wzór zwyk³ego graficznego klienta FTP.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %configure
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -I/usr/include/libnjb"
 
 %install
 rm -rf $RPM_BUILD_ROOT
