@@ -2,7 +2,7 @@ Summary:	Software for managing Zen Nomad playlist
 Summary(pl):	Oprogramowanie do zarz±dzania list± plików Zen Creative
 Name:		gnomad2
 Version:	2.8.2
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
@@ -16,6 +16,7 @@ BuildRequires:	gtk+2-devel >= 2.0
 BuildRequires:	libgnomeui-devel >= 2.0
 BuildRequires:	libid3tag-devel >= 0.15
 BuildRequires:	libnjb-devel >= 2.2.4
+BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
 Requires:	libnjb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,3 +59,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/gnomad2.desktop
 %{_pixmapsdir}/gnomad2.png
+%lang(de) %{_datadir}/locale/de/LC_MESSAGES/gnomad2.mo
+%lang(es) %{_datadir}/locale/es/LC_MESSAGES/gnomad2.mo
+%lang(fi) %{_datadir}/locale/fi/LC_MESSAGES/gnomad2.mo
+%lang(fr) %{_datadir}/locale/fr/LC_MESSAGES/gnomad2.mo
+%lang(it) %{_datadir}/locale/it/LC_MESSAGES/gnomad2.mo
+%lang(nl) %{_datadir}/locale/nl/LC_MESSAGES/gnomad2.mo
+%lang(no) %{_datadir}/locale/no/LC_MESSAGES/gnomad2.mo
+%lang(sv) %{_datadir}/locale/sv/LC_MESSAGES/gnomad2.mo
+%lang(zh_CN) %{_datadir}/locale/zh_CN/LC_MESSAGES/gnomad2.mo
+
+%{_mandir}/man1/*
