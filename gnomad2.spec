@@ -52,23 +52,16 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/gnomad2.desktop
 %{_pixmapsdir}/gnomad2.png
-%lang(de) %{_datadir}/locale/de/LC_MESSAGES/gnomad2.mo
-%lang(es) %{_datadir}/locale/es/LC_MESSAGES/gnomad2.mo
-%lang(fi) %{_datadir}/locale/fi/LC_MESSAGES/gnomad2.mo
-%lang(fr) %{_datadir}/locale/fr/LC_MESSAGES/gnomad2.mo
-%lang(it) %{_datadir}/locale/it/LC_MESSAGES/gnomad2.mo
-%lang(nl) %{_datadir}/locale/nl/LC_MESSAGES/gnomad2.mo
-%lang(no) %{_datadir}/locale/no/LC_MESSAGES/gnomad2.mo
-%lang(sv) %{_datadir}/locale/sv/LC_MESSAGES/gnomad2.mo
-%lang(zh_CN) %{_datadir}/locale/zh_CN/LC_MESSAGES/gnomad2.mo
-
 %{_mandir}/man1/*
