@@ -1,12 +1,12 @@
 Summary:	Software for managing Zen Nomad playlist
 Summary(pl):	Oprogramowanie do zarz±dzania list± plików Zen Creative
 Name:		gnomad2
-Version:	2.8.5
+Version:	2.8.6
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
-# Source0-md5:	00b737b87a71ebde142b6032b623b65e
+# Source0-md5:	304991c13356948418f0638e1ef9b30b
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://gnomad2.sourceforge.net/
