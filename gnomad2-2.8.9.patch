@@ -1,0 +1,22 @@
+--- gnomad2-2.8.9-orig/src/jukebox.c	2006-09-21 14:51:05.000000000 +0800
++++ gnomad2-2.8.9/src/jukebox.c	2006-12-31 01:54:41.000000000 +0800
+@@ -1234,8 +1234,17 @@
+     gchar *desc;
+     gchar *label;
+ 
+-    ret = LIBMTP_Get_Storageinfo(mtpdevice, &totalbytes, &freebytes, &desc, &label);
+-    if (ret != 0) {
++//    ret = LIBMTP_Get_Storageinfo(mtpdevice, &totalbytes, &freebytes, &desc, &label);
++    ret = LIBMTP_Get_Storage(mtpdevice, LIBMTP_STORAGE_SORTBY_NOTSORTED);
++    
++    if (ret == 0) {
++        totalbytes = mtpdevice->storage->MaxCapacity;
++        freebytes = mtpdevice->storage->FreeSpaceInBytes;
++
++        // These are not used right now.
++        desc = NULL;
++        label = NULL;
++    } else {
+       totalbytes = 0;
+       freebytes = 0;
+     }
