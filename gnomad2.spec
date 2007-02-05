@@ -2,19 +2,20 @@ Summary:	Software for managing Zen Nomad playlist
 Summary(pl):	Oprogramowanie do zarz±dzania list± plików Zen Creative
 Name:		gnomad2
 Version:	2.8.9
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
 # Source0-md5:	d9362ae17f1ced02efe297a255512377
 Source1:	%{name}.desktop
 Source2:	%{name}.png
+Patch0:		http://glenstorm.beyondthelamppost.net/files/%{name}-2.8.9.patch
 URL:		http://gnomad2.sourceforge.net/
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gtk+2-devel >= 2.0
 BuildRequires:	libgnomeui-devel >= 2.0
 BuildRequires:	libid3tag-devel >= 0.15.1b-4
-BuildRequires:	libmtp-devel >= 0.0.20
+BuildRequires:	libmtp-devel >= 0.1.3
 BuildRequires:	libnjb-devel >= 2.2.4
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
@@ -34,6 +35,7 @@ wzór zwyk³ego graficznego klienta FTP.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
