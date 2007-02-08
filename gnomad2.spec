@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
-# Sourace0-md5:	661af9f68f2aab19659265050a9ae40c
+# Source0-md5:	661af9f68f2aab19659265050a9ae40c
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://gnomad2.sourceforge.net/
