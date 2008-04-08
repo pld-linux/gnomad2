@@ -1,3 +1,6 @@
+# TODO
+# - error: gnomad2-2.9.1-1: req /usr/share/locale/cs_CZ/LC_MESSAGES not found
+# - error: gnomad2-2.9.1-1: req /usr/share/locale/sco/LC_MESSAGES not found
 Summary:	Software for managing Zen Nomad playlist
 Summary(pl.UTF-8):	Oprogramowanie do zarządzania listą plików Zen Creative
 Name:		gnomad2
