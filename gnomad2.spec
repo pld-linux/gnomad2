@@ -1,12 +1,12 @@
 Summary:	Software for managing Zen Nomad playlist
 Summary(pl.UTF-8):	Oprogramowanie do zarządzania listą plików Zen Creative
 Name:		gnomad2
-Version:	2.9.2
+Version:	2.9.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Multimedia
-Source0:	http://dl.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
-# Source0-md5:	39ca24bec8b8a28ee73e88eabddf59fb
+Source0:	http://downloads.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
+# Source0-md5:	e47382c8cbb87b0e6630b847c464c3b2
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://gnomad2.sourceforge.net/
@@ -50,7 +50,6 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/locale/{no,nb}
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/cs{_CZ,}
 # unsupported by glibc (2.7)
 rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/sco
