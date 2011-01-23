@@ -10,14 +10,18 @@ Source0:	http://downloads.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://gnomad2.sourceforge.net/
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gtk+2-devel >= 2.0
+BuildRequires:	hal-devel
+BuildRequires:	intltool
 BuildRequires:	libgnomeui-devel >= 2.0
 BuildRequires:	libid3tag-devel >= 0.15.1b-4
 BuildRequires:	libmtp-devel >= 0.1.3
 BuildRequires:	libnjb-devel >= 2.2.4
 BuildRequires:	perl-XML-Parser
 BuildRequires:	pkgconfig
+BuildRequires:	taglib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
