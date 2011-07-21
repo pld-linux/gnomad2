@@ -7,8 +7,6 @@ License:	GPL v2
 Group:		X11/Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/gnomad2/%{name}-%{version}.tar.gz
 # Source0-md5:	213bfee7d020aea092576b45691aba36
-Source1:	%{name}.desktop
-Source2:	%{name}.png
 URL:		http://gnomad2.sourceforge.net/
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.0
@@ -51,12 +49,12 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/cs{_CZ,}
+
 # unsupported by glibc (2.7)
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/sco
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/sco
+
 %find_lang %{name}
 
 %clean
